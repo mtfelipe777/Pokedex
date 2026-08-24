@@ -7,3 +7,4 @@ class Pokedex:
 
     def listar_pokemons(self):
         return self.pokemons
+    
