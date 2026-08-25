@@ -1,10 +1,9 @@
-from treinador import Treinador
 class Equipe:
     def __init__(self):
         self.pokemons = []
     def adicionar_pokemon(self, pokemon):
         if len(self.pokemons) < 3:
-            self.pokemons.append(pokemon)
+            self.pokemons.append(pokemon.nome)
             return True
         return False
     def remover_pokemon(self, nome):
@@ -14,5 +13,6 @@ class Equipe:
                 return True
         return False
     def listar_pokemons(self):
-        return self.pokemons
+        for pokemon in self.pokemons:
+            return self.pokemons
         
