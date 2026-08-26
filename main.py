@@ -5,26 +5,36 @@ from pokedex import Pokedex
 from treinador import Treinador
 
 
+
 pokedex = Pokedex()
 
 nome_treinador = input("Digite o nome do treinador: ")
+print()
 treinador = Treinador(nome_treinador)
 
-while True:
-    print()
-    print("POKÉDEX:")
-    print()
-    print("1 - Cadastrar Pokémon")
-    print("2 - Listar todos os Pokémons")
-    print("3 - Listar Pokémons de água")
-    print("4 - Listar Pokémons de fogo")
-    print("5 - Ver Pokémon capturados")
-    print("6 - Adicionar Pokémon a equipe")
-    print("7 - Deletar Pokémon da equipe")
-    print("8 - Listar equipe")
-    print("0 - Sair")
-    print()
+RESET     = '\033[0m'
+NEGRITO   = '\033[1m'
+VERMELHO  = '\033[31m'
+VERDE     = '\033[32m'
+AMARELO   = '\033[33m'
+AZUL      = '\033[34m'
+ROXO      = '\033[35m'
+CIANO     = '\033[36m'
+CINZA     = '\033[90m'
 
+while True:
+    print(f"{NEGRITO}POKÉDEX:{RESET}")
+    print()
+    print(f"{VERDE}1 - Cadastrar Pokémon{RESET}")
+    print(f"{AMARELO}2 - ⚡Listar todos os Pokémons{RESET}")
+    print(f"{AZUL}3 - 💧Listar Pokémons de água{RESET}")
+    print(f"{VERMELHO}4 - 🔥Listar Pokémons de fogo{RESET}")
+    print(f"{ROXO}5 - Ver Pokémon capturados{RESET}")
+    print(f"{CIANO}6 - Adicionar Pokémon a equipe{RESET}")
+    print(f"{CIANO}7 - Deletar Pokémon da equipe{RESET}")
+    print(f"{CIANO}8 - Listar equipe{RESET}")
+    print(f"{CINZA}0 - Sair{RESET}")
+    print()
     opcao = input("Digite uma opção: ")
     print()
 
@@ -106,7 +116,7 @@ while True:
                         print("Pokémon adicionado à equipe!")
                         print()
                     else:
-                        print("A equipe já possui 3 Pokémon.")
+                        print("A equipe já possui 3 Pokémons.")
                         print()
                 else:
                     print("Esse Pokémon não foi capturado.")
@@ -128,7 +138,7 @@ while True:
         print()
 
     elif opcao == "0":
-        print("Saindo da Pokédex.")
+        print("Pokédex fechada.")
         break
 
     else:
