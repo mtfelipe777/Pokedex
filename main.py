@@ -11,6 +11,7 @@ nome_treinador = input("Digite o nome do treinador: ")
 treinador = Treinador(nome_treinador)
 
 while True:
+    print()
     print("POKÉDEX:")
     print()
     print("1 - Cadastrar Pokémon")
@@ -20,8 +21,9 @@ while True:
     print("5 - Ver Pokémon capturados")
     print("6 - Adicionar Pokémon a equipe")
     print("7 - Deletar Pokémon da equipe")
-    print("8 - Listar equipes")
+    print("8 - Listar equipe")
     print("0 - Sair")
+    print()
 
     opcao = input("Digite uma opção: ")
     print()
@@ -32,17 +34,17 @@ while True:
         nome = input("Nome do Pokémon: ")
         tipo = input("Tipo do Pokémon: ")
         nivel = int(input("Nível do Pokémon: "))
-        capturado = input("O Pokémon foi capturado? (s/n): ")
-        if tipo == "Água":
+        capturado = input("O Pokémon foi capturado? (sim/não): ")
+        if tipo == "agua":
             pokemon = PokemonAgua(nome, tipo, nivel, capturado)
-        elif tipo == "Fogo":
+        elif tipo == "fogo":
             pokemon = PokemonFogo(nome, tipo, nivel, capturado)
         else:
             pokemon = Pokemon(nome, tipo, nivel, capturado)
 
         pokedex.adicionar_pokemon(pokemon)
 
-        if capturado == "Sim":
+        if capturado == "sim":
             treinador.capturar_pokemon(pokemon)
 
         print("Pokémon cadastrado.")
@@ -60,19 +62,20 @@ while True:
         else:
             for pokemon in pokemons:
                 print(pokemon.imprimir_dados())
+                print()
 
     elif opcao == "3":
         print("POKÉMONS DE ÁGUA:")
         print()
         for pokemon in pokedex.listar_pokemons():
-            if pokemon.tipo == "Água":
+            if pokemon.tipo == "agua":
                 print(pokemon.imprimir_dados())
 
     elif opcao == "4":
         print("POKÉMONS DE FOGO:")
         print()
         for pokemon in pokedex.listar_pokemons():
-            if pokemon.tipo == "Fogo":
+            if pokemon.tipo == "fogo":
                 print(pokemon.imprimir_dados())
 
     elif opcao == "5":
@@ -83,9 +86,11 @@ while True:
 
         if len(pokemons) == 0:
             print("Nenhum Pokémon capturado.")
+            print()
         else:
             for pokemon in pokemons:
                 print(pokemon.imprimir_dados())
+                print()
 
     elif opcao == "6":
         print("ADICIONAR A EQUIPE")
@@ -96,7 +101,7 @@ while True:
         for pokemon in pokedex.listar_pokemons():
             if pokemon.nome == nome:
 
-                if pokemon.capturado == "Sim":
+                if pokemon.capturado == "sim":
                     if treinador.equipe.adicionar_pokemon(pokemon):
                         print("Pokémon adicionado à equipe!")
                         print()
@@ -114,10 +119,13 @@ while True:
         nome = input("Informe o nome do pokémon que você quer deletar: ")
         if treinador.equipe.remover_pokemon(nome):
             print("Pokémon removido da equipe!")
+            print()
         else:
             print("Pokémon não encontrado na equipe.")
+            print()
     elif opcao == "8":
         print(treinador.equipe.listar_pokemons())
+        print()
 
     elif opcao == "0":
         print("Saindo da Pokédex.")

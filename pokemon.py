@@ -5,4 +5,4 @@ class Pokemon:
         self.nivel = nivel
         self.capturado = capturado
     def imprimir_dados(self):
-        return f"Nome do Pokémon: {self.nome}, Tipo do Pokémon: {self.tipo}, Nível do Pokémon: {self.nivel}, Status de Captura: {self.capturado}."
+        return f"Nome do Pokémon: {self.nome}, Tipo: {self.tipo}, Nível do Pokémon: {self.nivel}, Status de Captura: {self.capturado}."
